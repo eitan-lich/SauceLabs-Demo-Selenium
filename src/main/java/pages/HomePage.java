@@ -1,21 +1,15 @@
-package pageObjects;
-
-import java.io.IOException;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import basePage.BasePage;
+public class HomePage {
 
-public class Homepage extends BasePage {
+	private WebDriver driver;
 
-	private static WebDriver driver;
-
-	public Homepage() throws IOException {
-		super();
-		driver = getDriver();
-		driver.get(getUrl());
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
 	}
 
 	By cartBtn = By.cssSelector(".btn-inverse");
