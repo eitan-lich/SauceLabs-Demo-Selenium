@@ -11,17 +11,17 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import pages.HomePage;
+import pages.LoginPage;
 
-public class BaseTests {
+public class BaseTest {
 
-	private WebDriver driver;
+	protected WebDriver driver;
 	private String url;
 	private Properties prop;
-	protected HomePage homePage;
+	protected LoginPage loginPage;
 
 
-	public BaseTests() throws IOException {
+	public BaseTest() throws IOException {
 		prop = new Properties();
 		FileInputStream data = new FileInputStream(
 				System.getProperty("user.dir") + "\\resources\\config.properties");
@@ -33,8 +33,9 @@ public class BaseTests {
 		driver = getDriver();
 		driver.get(getUrl());
 		driver.manage().window().maximize();
-		homePage = new HomePage(driver);
+		loginPage = new LoginPage(driver);
 	}
+
 
 	@AfterClass
 	public void tearDown() {
