@@ -23,6 +23,10 @@ public abstract class BasePage {
     protected void type(String text, By locator) {
         find(locator).sendKeys(text);
     }
+
+    protected boolean isDisplayed(By locator) {
+        return find(locator).isDisplayed();
+    }
 }
 
 
