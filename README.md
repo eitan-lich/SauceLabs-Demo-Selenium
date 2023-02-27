@@ -1,4 +1,4 @@
-# opencart-selenium-java
+# pom-selenium-java
 
 
-A selenium project written in Java to test an ecommerce website.
+A selenium project written in Java implementing a POM design.
