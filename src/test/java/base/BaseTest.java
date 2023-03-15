@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -43,12 +45,14 @@ public class BaseTest {
 
 	public WebDriver getDriver() {
 		String browser = prop.getProperty("browser");
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--remote-allow-origins=*");
 
 		switch (browser) {
 		case "chrome":
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "\\resources\\chromedriver.exe");
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(option);
 			break;
 		case "firefox":
 			System.setProperty("webdriver.gecko.driver",
@@ -64,6 +68,8 @@ public class BaseTest {
 			System.out.println("No such browser");
 
 		}
+
+
 		return driver;
 	}
 

@@ -21,13 +21,13 @@ public class LoginPage extends BasePage {
 		type(password, passwordInput);
 	}
 
-	public storePage clickLoginBtn() {
+	public StorePage clickLoginBtn() {
 		click(loginBtn);
-		return new storePage(driver);
+		return new StorePage(driver);
 	}
 
 
-	public storePage loginWith(String username, String password) {
+	public StorePage loginWith(String username, String password) {
 		setUsernameInput(username);
 		setPasswordInput(password);
 		return clickLoginBtn();
