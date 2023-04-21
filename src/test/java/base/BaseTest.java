@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeClass;
 import pages.LoginPage;
 
 public class BaseTest {
-	private WebDriver driver;
+	protected WebDriver driver;
 	private String url;
 	private Properties prop;
 	protected LoginPage loginPage;

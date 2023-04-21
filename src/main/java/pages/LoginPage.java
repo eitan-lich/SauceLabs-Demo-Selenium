@@ -12,6 +12,10 @@ public class LoginPage extends BasePage {
 	By usernameInput = By.id("user-name");
 	By passwordInput = By.id("password");
 	By loginBtn = By.id("login-button");
+	By errorMessageWrongInfo = By.cssSelector("form h3");
+	By errorMessageMissingUsername = By.cssSelector("form h3");
+	By errorMessageMissingPassword = By.cssSelector("form h3");
+
 
 	public void setUsernameInput(String username) {
 		type(username, usernameInput);
@@ -31,5 +35,17 @@ public class LoginPage extends BasePage {
 		setUsernameInput(username);
 		setPasswordInput(password);
 		return clickLoginBtn();
+	}
+
+	public String getErrorMessageWrongInfo() {
+		return find(errorMessageWrongInfo).getText();
+	}
+
+	public String getErrorMessageMissingUsername() {
+		return find(errorMessageMissingUsername).getText();
+	}
+
+	public String getErrorMessageMissingPassword() {
+		return find(errorMessageMissingPassword).getText();
 	}
 }
