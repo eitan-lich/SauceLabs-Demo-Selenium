@@ -25,6 +25,7 @@ public class CheckoutTests extends BaseTest {
         StorePage storepage = loginPage.loginWith("standard_user","secret_sauce");
         CartPage cartpage = storepage.addItemAndToCart();
         checkoutPage = cartpage.checkOut();
+        l
     }
 
     @Test
