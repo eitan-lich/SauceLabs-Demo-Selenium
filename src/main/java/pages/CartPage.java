@@ -19,8 +19,9 @@ public class CartPage extends BasePage {
         click(removeBtn);
     }
 
-    public void checkOut() {
+    public CheckoutPage checkOut() {
         click(checkoutBtn);
+        return new CheckoutPage(driver);
     }
 
     public void continueShopping() {
